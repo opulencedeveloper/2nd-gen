@@ -7,7 +7,7 @@
 
 @media (max-width: 767px) {
     .navbar.sticky-top {
-        padding-top: 40px; /* Adjust this value according to your needs */
+        padding-top: 30px; /* Adjust this value according to your needs */
     }
 }
 
