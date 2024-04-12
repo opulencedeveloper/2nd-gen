@@ -5,6 +5,12 @@
     --dark: #252525;
 }
 
+@media (max-width: 767px) {
+    .navbar.sticky-top {
+        padding-top: 40px; /* Adjust this value according to your needs */
+    }
+}
+
 h1,
 h2,
 .h1,
