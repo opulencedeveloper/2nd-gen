@@ -574,16 +574,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <form class="col-lg-6 wow fadeInUp" id="contactForm" data-wow-delay="0.5s">
                     <div class="row g-3">
                         <div class="col-12 col-sm-6">
-                            <input type="text" class="form-control" placeholder="Your Name" style="height: 55px;">
+                            <input id="name" type="text" type="text" class="form-control" placeholder="Your Name" style="height: 55px;">
                         </div>
                         <div class="col-12 col-sm-6">
-                            <input type="email" class="form-control" placeholder="Your Email" style="height: 55px;">
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" style="height: 55px;">
                         </div>
                         <div class="col-12 col-sm-6">
-                            <input type="text" class="form-control" placeholder="Your Mobile" style="height: 55px;">
+                            <input id="number" text="number" type="text" class="form-control" placeholder="Your Mobile" style="height: 55px;">
                         </div>
                         <!-- <div class="col-12 col-sm-6">
                             <select class="form-select" style="height: 55px;">
@@ -595,26 +595,28 @@
                         </div> -->
                         <div class="col-12 col-sm-6">
                             <div class="date" id="date" data-target-input="nearest">
-                                <input type="text"
+                                <input type="date"
+                                    id="date"
                                     class="form-control datetimepicker-input"
                                     placeholder="Choose Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
                             </div>
                         </div>
                         <div class="col-12 col-sm-6">
                             <div class="time" id="time" data-target-input="nearest">
-                                <input type="text"
+                                <input type="time"
+                                    id="time"
                                     class="form-control datetimepicker-input"
-                                    placeholder="Choose Date" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
+                                    placeholder="Choose Tine" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
                             </div>
                         </div>
                         <div class="col-12">
-                            <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                            <textarea id="message" type="text" class="form-control" rows="5" placeholder="Message"></textarea>
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" type="submit">Book Appointment</button>
+                            <button type="submit" class="btn btn-primary w-100 py-3" type="submit">Book Appointment</button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -724,6 +726,29 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+   <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get form data
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var number = document.getElementById("number").value;
+        var date = document.getElementById("date").value;
+        var time = document.getElementById("time").value;
+        var message = document.getElementById("message").value;
+
+        // Construct mailto link
+        var mailtoLink = "mailto:recipient@example.com" + // Replace with your email address
+            "?subject=" + encodeURIComponent("New Contact Form Submission") +
+            "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\nPhone Number: " + number + "\nDate: " + date + "\nTime: " + time + "\nMessage: " + message);
+
+        // Open email client
+        window.location.href = mailtoLink;
+    });
+</script>
+
+    
 </body>
 
 </html>
