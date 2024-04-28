@@ -741,8 +741,8 @@
 
         // Construct mailto link
         var mailtoLink = "mailto:recipient@example.com" + // Replace with your email address
-            "?subject=" + encodeURIComponent("New Contact Form Submission") +
-            "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\nPhone Number: " + number + "\nDate: " + date + "\nTime: " + time + "\nMessage: " + message);
+            "?subject=" + encodeURIComponent("Appointment Booking") +
+            "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\nPhone Number: " + number + "\nSelected Appointment Date: " + date + "\nTime: " + time + "\nMessage: " + message);
 
         // Open email client
         window.location.href = mailtoLink;
